@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @Repository
 public interface PlantRepository extends JpaRepository<Plant,Long> {
+    //commit
     List<Plant> findByCategory(Category category);
     List<Plant> findByPriceLessThanEqual(BigDecimal price);
     List<Plant> findByCategoryAndPriceLessThanEqual(Category category,BigDecimal price);

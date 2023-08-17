@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface PlantService {
+    //commit
     List<PlantDTO> getAllPlants();
     PlantDTO findPlantById(Long id);
     PlantDTO createPlant(PlantDTO plantDTO);

@@ -101,7 +101,7 @@ public class PlantServiceImpl implements PlantService {
     }
 
     /**
-     * tìm kiếm theo categoryId và price
+     * tìm kiếm theo categoryId và prices
      */
     @Override
     public List<PlantDTO> getPlantsByCategoryAndPriceLessThanEqual(
