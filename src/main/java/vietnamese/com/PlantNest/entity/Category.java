@@ -23,4 +23,8 @@ public class Category {
     private String name;
     @OneToMany(mappedBy = "category")
     private Set<Plant> plants;
+
+    public Category(String name) {
+        this.name = name;
+    }
 }
