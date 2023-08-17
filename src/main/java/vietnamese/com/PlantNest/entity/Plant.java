@@ -1,5 +1,6 @@
 package vietnamese.com.PlantNest.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
@@ -35,6 +36,7 @@ public class Plant {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @JsonIdentityReference(alwaysAsId = true)
     private Category category;
 
     public Plant(String name, String description, BigDecimal price, String imageUrl, Category category) {

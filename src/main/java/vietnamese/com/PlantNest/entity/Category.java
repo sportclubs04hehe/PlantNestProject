@@ -1,5 +1,7 @@
 package vietnamese.com.PlantNest.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -9,7 +11,7 @@ import lombok.Setter;
 import java.util.Set;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
-
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "categoryId")
 @Getter
 @Setter
 @Entity
@@ -23,4 +25,8 @@ public class Category {
     private String name;
     @OneToMany(mappedBy = "category")
     private Set<Plant> plants;
+
+    public Category(String name) {
+        this.name = name;
+    }
 }

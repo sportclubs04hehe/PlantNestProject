@@ -7,6 +7,7 @@ import vietnamese.com.PlantNest.entity.Plant;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface PlantRepository extends JpaRepository<Plant,Long> {
@@ -17,4 +18,5 @@ public interface PlantRepository extends JpaRepository<Plant,Long> {
     List<Plant> findByCategoryAndPriceLessThanEqualAndNameContaining(
             Category category, BigDecimal price, String name
     );
+    Optional<Plant> findPlantByPlantId(Long plantId);
 }

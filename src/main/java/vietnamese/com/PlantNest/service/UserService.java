@@ -9,11 +9,16 @@ import java.util.List;
 public interface UserService {
     List<UserDTO> getAllUsers();
 
+    User convertToEntity(UserDTO userDTO);
     UserDTO convertToDTO(User user);
 
-    UserDTO getUserByUsername(String username);
+    UserDTO findUserById (Long userId);
+    UserDTO findUserByUsername(String username);
 
-    UserDTO getUserByEmail(String email);
+    UserDTO findUserByEmail(String email);
 
     UserDTO createUser(UserDTO userDTO);
+    UserDTO updateUser(Long id, UserDTO userDTO);
+    void deleteUser(Long id);
+
 }
