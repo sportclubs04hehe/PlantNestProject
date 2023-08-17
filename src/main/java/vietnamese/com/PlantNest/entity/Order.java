@@ -11,6 +11,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Getter
@@ -37,12 +38,15 @@ public class Order {
     @NotNull
     @DecimalMin("0.0")
     private BigDecimal totalAmount;
+    @Enumerated(STRING)
+    private OrderStatus orderStatus;
 
-    public Order(User users, Plant plants, int quantity, LocalDateTime orderDate, BigDecimal totalAmount) {
+    public Order(User users, Plant plants, int quantity, LocalDateTime orderDate, BigDecimal totalAmount, OrderStatus orderStatus) {
         this.users = users;
         this.plants = plants;
         this.quantity = quantity;
         this.orderDate = orderDate;
         this.totalAmount = totalAmount;
+        this.orderStatus = orderStatus;
     }
 }
