@@ -1,26 +1,30 @@
 package vietnamese.com.PlantNest.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import vietnamese.com.PlantNest.entity.OrderStatus;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Getter @Setter
 @NoArgsConstructor
 public class OrderDTO {
     private Long orderId;
-    private UserDTO user;
-    private PlantDTO plant;
+    @JsonProperty("user")
+    private UserDTO users;
+    @JsonProperty("plant")
+    private PlantDTO plants;
     private int quantity;
-    private LocalDate orderDate;
+    private LocalDateTime orderDate;
     private BigDecimal totalAmount;
     private OrderStatus orderStatus;
 
-    public OrderDTO(UserDTO user, PlantDTO plant, int quantity, LocalDate orderDate, BigDecimal totalAmount,OrderStatus orderStatus) {
-        this.user = user;
-        this.plant = plant;
+    public OrderDTO(UserDTO users, PlantDTO plants, int quantity, LocalDateTime orderDate, BigDecimal totalAmount,OrderStatus orderStatus) {
+        this.users = users;
+        this.plants = plants;
         this.quantity = quantity;
         this.orderDate = orderDate;
         this.totalAmount = totalAmount;

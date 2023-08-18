@@ -1,6 +1,8 @@
 package vietnamese.com.PlantNest.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
@@ -14,6 +16,7 @@ import java.math.BigDecimal;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "plantId")
 @Getter
 @Setter
 @Entity

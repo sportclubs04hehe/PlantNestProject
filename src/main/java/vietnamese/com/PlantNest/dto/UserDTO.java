@@ -1,5 +1,7 @@
 package vietnamese.com.PlantNest.dto;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +20,7 @@ import java.util.Set;
 import static jakarta.persistence.GenerationType.IDENTITY;
 import static vietnamese.com.PlantNest.entity.Role.USER;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "userId")
 @Getter @Setter
 @NoArgsConstructor
 
